@@ -21,9 +21,8 @@ jobs:
     - name: Cache node modules
       uses: actions/cache@v1
       with:
-        path: node_modules
+        path: ./node-project/node_modules
         key: npm-${{hashFiles('package-lock.json')}}
-      working-directory: ./node-project
     - name: npm install, build, and test
       run: |
         npm ci
