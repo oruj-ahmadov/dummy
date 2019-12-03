@@ -11,11 +11,10 @@ jobs:
     strategy:
       matrix:
         node-version: [10.x]
-    
-    env:
-      PROJECT-PATH: ./node-project
 
     steps:
+    - env:
+      PROJECT-PATH: ./node-project
     - uses: actions/checkout@v1
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
