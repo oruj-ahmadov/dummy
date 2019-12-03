@@ -2,7 +2,7 @@ name: Node CI
 
 on:
   pull_request:
-    types: [opened]
+    types: [opened, reopened]
     branches: master
 
 jobs:
@@ -27,5 +27,6 @@ jobs:
         npm install
         npm run build --if-present
         npm run test
+      working-directory: ./engine
       env:
         CI: true
