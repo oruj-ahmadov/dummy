@@ -26,6 +26,6 @@ jobs:
         npm install
         npm run build --if-present
         npm run test
-      working-directory: ./engine
+      working-directory: ./node-project
       env:
         CI: true
