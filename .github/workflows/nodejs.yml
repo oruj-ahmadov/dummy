@@ -11,6 +11,7 @@ jobs:
     strategy:
       matrix:
         node-version: [10.x]
+      static:
         node-path: [./node-project]
 
     steps:
@@ -22,14 +23,14 @@ jobs:
     - name: Cache node modules
       uses: actions/cache@v1
       with:
-        path: ${{ matrix.node-path }}/node_modules
-        key: npm-${{hashFiles('${{ matrix.node-path }}/package-lock.json')}}
+        path: ${{ static.node-path }}/node_modules
+        key: npm-${{hashFiles('${{ static.node-path }}/package-lock.json')}}
     - name: npm install, build, and test
       run: |
         npm ci
         npm install
         npm run build --if-present
         npm run test
-      working-directory: ${{ matrix.node-path }}
+      working-directory: ${{ static.node-path }}
       env:
         CI: true
