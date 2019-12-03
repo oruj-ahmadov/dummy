@@ -1,1 +1,3 @@
-console.log('Hello Github Action');
+function hello() {
+    console.log('Hello World')
+}
