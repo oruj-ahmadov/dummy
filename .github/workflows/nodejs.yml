@@ -2,8 +2,8 @@ name: Node CI
 
 on:
   push:
-    paths-ignore:
-      - '*/github/workflows/*.yml'
+    # paths-ignore:
+    #   - '*/github/workflows/*.yml'
 
 jobs:
   build:
@@ -26,7 +26,7 @@ jobs:
         path: ./engine/node_modules
         key: npm-${{ hashFiles('**/package-lock.json') }}
     - name: npm test
-      run: echo "Hello world"
+      run: rm package-lock.json
       working-directory: ./engine
       env:
         CI: true
