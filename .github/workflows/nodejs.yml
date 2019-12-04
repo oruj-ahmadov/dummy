@@ -3,7 +3,7 @@ name: Node CI
 on:
   push:
     paths-ignore:
-      - '*/github/workflows/**'
+      - '*/github/workflows/*.yml'
 
 jobs:
   build:
