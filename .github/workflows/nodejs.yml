@@ -21,7 +21,7 @@ jobs:
     - name: Cache node modules
       uses: actions/cache@v1
       with:
-        path: ./engine/node_modules
+        path: ./node-project/node_modules
         key: npm-${{ hashFiles('**/package.json') }}
     - name: npm test
       run: npm i
