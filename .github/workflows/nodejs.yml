@@ -22,9 +22,9 @@ jobs:
       uses: actions/cache@v1
       with:
         path: ./engine/node_modules
-        key: npm-${{ hashFiles('**/package-lock.json') }}
+        key: npm-${{ hashFiles('**/package.json') }}
     - name: npm test
-      run: rm package-lock.json
+      run: npm i
       working-directory: ./engine
       env:
         CI: true
