@@ -24,7 +24,7 @@ jobs:
         path: ./node-project/node_modules
         key: npm-${{ hashFiles('**/package.json') }}
     - name: npm test
-      run: npm install
+      run: echo "Test 1"
       working-directory: ./node-project
       env:
         CI: true
